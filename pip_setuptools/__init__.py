@@ -1,8 +1,8 @@
 import sys, os, shutil, time
 from setuptools import setup, find_packages
 
-__version__ = '1.0.0'
-__all__ = ['setup', 'find_packages', 'clean', '__version__']
+__version__ = '1.0.3'
+__all__ = ['setup', 'find_packages', 'clean', '__version__', 'requirements', 'readme']
 
 
 def clean():
