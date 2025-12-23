@@ -25,3 +25,8 @@ def requirements(filename: str = 'requirements.txt'):
     with open(filename, encoding='utf-8') as file:
         return file.readlines()
 
+
+def readme(filename: str = 'README.md'):
+    with open(filename, encoding='utf-8') as file:
+        return file.read()
+
