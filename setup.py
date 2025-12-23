@@ -2,7 +2,7 @@ from setuptools import setup, find_packages
 
 setup(
     name='pip-setuptools',
-    version='1.0.0',
+    version='1.0.1',
     author="Маг Ильяс DOMA (MagIlyasDOMA)",
     author_email='magilyas.doma.09@list.ru',
     url='https://github.com/MagIlyasDOMA/pip-setuptools',
@@ -30,5 +30,10 @@ setup(
         'Programming Language :: Python :: 3.13',
         'Programming Language :: Python :: 3.14',
         'Programming Language :: Python :: 3 :: Only',
-    ]
+    ],
+    entry_points={
+        'console_scripts': [
+            'package-compiler=pip_setuptools.package_compiler:main',
+        ]
+    }
 )
