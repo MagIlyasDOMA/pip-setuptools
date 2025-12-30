@@ -1,7 +1,7 @@
 import sys, os, shutil, time
 from setuptools import setup, find_packages
 
-__version__ = '1.0.4'
+__version__ = '1.0.5'
 __all__ = ['setup', 'find_packages', 'clean', '__version__', 'requirements', 'readme']
 
 
@@ -19,12 +19,18 @@ def clean():
     time.sleep(0.5)
 
 
-def requirements(filename: str = 'requirements.txt'):
-    with open(filename, encoding='utf-8') as file:
-        return file.readlines()
+def requirements(filename: str = 'requirements.txt') -> list[str]:
+    try:
+        with open(filename, encoding='utf-8') as file:
+            return file.readlines()
+    except FileNotFoundError:
+        return []
 
 
-def readme(filename: str = 'README.md'):
-    with open(filename, encoding='utf-8') as file:
-        return file.read()
+def readme(filename: str = 'README.md') -> str:
+    try:
+        with open(filename, encoding='utf-8') as file:
+            return file.read()
+    except FileNotFoundError:
+        return ''
 
