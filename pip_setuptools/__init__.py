@@ -1,10 +1,9 @@
 import sys, os, shutil, time
-from _typeshed import Incomplete
-from typing import Sequence, Mapping
+from typing import Sequence, Mapping, Any
 from setuptools import setup, find_packages, Extension, Distribution
 from setuptools._distutils.cmd import Command
 
-__version__ = '1.1.1'
+__version__ = '1.1.2'
 __all__ = ['setup', 'find_packages', 'clean', '__version__', 'requirements', 'readme', 'clean_and_setup']
 
 
@@ -59,7 +58,7 @@ def clean_and_setup(
     distclass: type[Distribution] = ...,
     script_name: str = ...,
     script_args: list[str] = ...,
-    options: Mapping[str, Incomplete] = ...,
+    options: Any = ...,
     license: str = ...,
     keywords: list[str] | str = ...,
     platforms: list[str] | str = ...,
@@ -70,7 +69,7 @@ def clean_and_setup(
     provides: list[str] = ...,
     requires: list[str] = ...,
     command_packages: list[str] = ...,
-    command_options: Mapping[str, Mapping[str, tuple[Incomplete, Incomplete]]] = ...,
+    command_options: Mapping[str, Mapping[str, tuple]] = ...,
     package_data: Mapping[str, list[str]] = ...,
     include_package_data: bool = ...,
     libraries: list[str] = ...,
