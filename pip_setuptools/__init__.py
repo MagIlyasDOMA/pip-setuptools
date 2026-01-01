@@ -1,7 +1,10 @@
 import sys, os, shutil, time
-from setuptools import setup, find_packages
+from _typeshed import Incomplete
+from typing import Sequence, Mapping
+from setuptools import setup, find_packages, Extension, Distribution
+from setuptools._distutils.cmd import Command
 
-__version__ = '1.0.5'
+__version__ = '1.1.0'
 __all__ = ['setup', 'find_packages', 'clean', '__version__', 'requirements', 'readme']
 
 
@@ -33,4 +36,92 @@ def readme(filename: str = 'README.md') -> str:
             return file.read()
     except FileNotFoundError:
         return ''
+
+
+def clean_and_setup(
+    *,
+    name: str = ...,
+    version: str = ...,
+    description: str = ...,
+    long_description: str = ...,
+    long_description_content_type: str = ...,
+    author: str = ...,
+    author_email: str = ...,
+    maintainer: str = ...,
+    maintainer_email: str = ...,
+    url: str = ...,
+    download_url: str = ...,
+    packages: list[str] = ...,
+    py_modules: list[str] = ...,
+    scripts: list[str] = ...,
+    ext_modules: Sequence[Extension] = ...,
+    classifiers: list[str] = ...,
+    distclass: type[Distribution] = ...,
+    script_name: str = ...,
+    script_args: list[str] = ...,
+    options: Mapping[str, Incomplete] = ...,
+    license: str = ...,
+    keywords: list[str] | str = ...,
+    platforms: list[str] | str = ...,
+    cmdclass: Mapping[str, type[Command]] = ...,
+    data_files: list[tuple[str, list[str]]] = ...,
+    package_dir: Mapping[str, str] = ...,
+    obsoletes: list[str] = ...,
+    provides: list[str] = ...,
+    requires: list[str] = ...,
+    command_packages: list[str] = ...,
+    command_options: Mapping[str, Mapping[str, tuple[Incomplete, Incomplete]]] = ...,
+    package_data: Mapping[str, list[str]] = ...,
+    include_package_data: bool = ...,
+    libraries: list[str] = ...,
+    headers: list[str] = ...,
+    ext_package: str = ...,
+    include_dirs: list[str] = ...,
+    password: str = ...,
+    fullname: str = ...,
+    **attrs,
+) -> Distribution:
+    clean()
+    return setup(
+        name=name,
+        version=version,
+        author=author,
+        author_email=author_email,
+        maintainer=maintainer,
+        maintainer_email=maintainer_email,
+        url=url,
+        download_url=download_url,
+        description=description,
+        long_description=long_description,
+        long_description_content_type=long_description_content_type,
+        classifiers=classifiers,
+        keywords=keywords,
+        platforms=platforms,
+        cmdclass=cmdclass,
+        data_files=data_files,
+        package_dir=package_dir,
+        obsoletes=obsoletes,
+        provides=provides,
+        requires=requires,
+        packages=packages,
+        py_modules=py_modules,
+        ext_modules=ext_modules,
+        scripts=scripts,
+        distclass=distclass,
+        script_name=script_name,
+        script_args=script_args,
+        options=options,
+        license=license,
+        command_packages=command_packages,
+        package_data=package_data,
+        include_package_data=include_package_data,
+        include_dirs=include_dirs,
+        command_options=command_options,
+        libraries=libraries,
+        headers=headers,
+        ext_package=ext_package,
+        password=password,
+        fullname=fullname,
+        **attrs
+    )
 
