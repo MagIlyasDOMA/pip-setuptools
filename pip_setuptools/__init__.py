@@ -4,8 +4,8 @@ from typing import Sequence, Mapping
 from setuptools import setup, find_packages, Extension, Distribution
 from setuptools._distutils.cmd import Command
 
-__version__ = '1.1.0'
-__all__ = ['setup', 'find_packages', 'clean', '__version__', 'requirements', 'readme']
+__version__ = '1.1.1'
+__all__ = ['setup', 'find_packages', 'clean', '__version__', 'requirements', 'readme', 'clean_and_setup']
 
 
 def clean():
