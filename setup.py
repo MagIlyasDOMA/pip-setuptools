@@ -2,7 +2,7 @@ from setuptools import setup, find_packages
 
 setup(
     name='pip-setuptools',
-    version='1.1.2',
+    version='1.1.3',
     author="Маг Ильяс DOMA (MagIlyasDOMA)",
     author_email='magilyas.doma.09@list.ru',
     url='https://github.com/MagIlyasDOMA/pip-setuptools',

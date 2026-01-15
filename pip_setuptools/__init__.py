@@ -3,14 +3,17 @@ from typing import Sequence, Mapping, Any
 from setuptools import setup, find_packages, Extension, Distribution
 from setuptools._distutils.cmd import Command
 
-__version__ = '1.1.2'
+__version__ = '1.1.3'
 __all__ = ['setup', 'find_packages', 'clean', '__version__', 'requirements', 'readme', 'clean_and_setup']
 
 
-def clean():
+def clean(dont_remove_dist: bool = False) -> None:
     # Удаляем build, dist и .egg-info директории
-    dirs_to_remove = ['build', 'dist']
-    # Добавляем .egg-info директории
+    dirs_to_remove = ['build']
+
+    if not dont_remove_dist:
+        dirs_to_remove.append('dist')
+
     dirs_to_remove.extend([d for d in os.listdir('.')
                            if d.endswith('.egg-info')])
 
