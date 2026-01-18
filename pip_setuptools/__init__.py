@@ -7,7 +7,7 @@ __version__ = '1.1.4'
 __all__ = ['setup', 'find_packages', 'clean', '__version__', 'requirements', 'readme', 'clean_and_setup']
 
 
-def clean(dont_remove_dist: bool = False) -> None:
+def clean(dont_remove_dist: bool = False, pause: float = 0.5) -> None:
     # Удаляем build, dist и .egg-info директории
     dirs_to_remove = ['build']
 
@@ -21,7 +21,7 @@ def clean(dont_remove_dist: bool = False) -> None:
         if os.path.exists(dir_name):
             shutil.rmtree(dir_name)
             print(f"Удалена директория {dir_name}")
-    time.sleep(0.5)
+    time.sleep(pause)
 
 
 def requirements(filename: str = 'requirements.txt') -> list[str]:
