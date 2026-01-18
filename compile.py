@@ -1,12 +1,9 @@
 import os, shutil, time
 
 
-def clean(dont_remove_dist: bool = False) -> None:
+def clean() -> None:
     # Удаляем build, dist и .egg-info директории
-    dirs_to_remove = ['build']
-
-    if not dont_remove_dist:
-        dirs_to_remove.append('dist')
+    dirs_to_remove = ['build', 'dist']
 
     dirs_to_remove.extend([d for d in os.listdir('.')
                            if d.endswith('.egg-info')])
@@ -18,4 +15,5 @@ def clean(dont_remove_dist: bool = False) -> None:
     time.sleep(0.5)
 
 
+clean()
 os.system('python setup.py sdist bdist_wheel')
