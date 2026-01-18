@@ -1,9 +1,9 @@
-import sys, os, shutil, time
+import os, shutil, time
 from typing import Sequence, Mapping, Any
 from setuptools import setup, find_packages, Extension, Distribution
 from setuptools._distutils.cmd import Command
 
-__version__ = '1.1.3'
+__version__ = '1.1.4'
 __all__ = ['setup', 'find_packages', 'clean', '__version__', 'requirements', 'readme', 'clean_and_setup']
 
 
@@ -27,7 +27,7 @@ def clean(dont_remove_dist: bool = False) -> None:
 def requirements(filename: str = 'requirements.txt') -> list[str]:
     try:
         with open(filename, encoding='utf-8') as file:
-            return file.readlines()
+            return [line.strip('\n\r') for line in file]
     except FileNotFoundError:
         return []
 
