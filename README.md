@@ -7,8 +7,6 @@
 - Консольную утилиту для сборки дистрибутивов (sdist и wheel).
 - Поддержку современных версий setuptools, wheel и twine.
 
----
-
 ## Установка
 Установите пакет через `pip`:
 ```shell
@@ -19,8 +17,6 @@ pip install pip-setuptools
 ```requirements
 pip-setuptools>=1.1.5
 ```
-
----
 
 ## Использование
 ### 1. Создание `setup.py` с помощью `clean_and_setup`
@@ -83,8 +79,6 @@ package-compiler --no-sdist
 package-compiler --no-wheel
 ```
 
----
-
 ## Функции и классы
 ### `clean(dont_remove_dist: bool = False, pause: float = 0.5) -> None`
 Удаляет временные директории (`build`, `dist`, `*.egg-info`).
@@ -102,8 +96,6 @@ package-compiler --no-wheel
 
 ### `package_compiler.main()`
 Точка входа для консольной утилиты `package-compiler`.
-
----
 
 ## Пример полного `setup.py`
 ```python
@@ -134,27 +126,19 @@ clean_and_setup(
 )
 ```
 
----
-
 ## Требования
 - `Python >= 3.6`
 - `setuptools >= 75.8.0`
 - `wheel >= 0.46.2`
 - `twine >= 6.0.1`
 
----
-
 ## Лицензия
 MIT License.
 Автор: Маг Ильяс DOMA (MagIlyasDOMA)
 GitHub: [MagIlyasDOMA/pip-setuptools](https://github.com/MagIlyasDOMA/pip-setuptools)
 
----
-
 ## Поддержка Python
 Пакет поддерживает все версии Python от 3.6 до 3.14.
-
----
 
 ## Примечание
 Этот пакет предназначен для разработчиков Python, которые хотят упростить процесс сборки и публикации своих пакетов. Он не заменяет `setuptools`, а расширяет его удобными утилитами.
